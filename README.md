@@ -21,19 +21,19 @@ Below are the tools (and their minimum versions) required to build luna-init:
 Once you have downloaded the source, execute the following to build it (after
 changing into the directory under which it was downloaded):
 
-$ mkdir BUILD
-$ cd BUILD
-$ cmake ..
-$ make
-$ sudo make install
+$ mkdir BUILD  
+$ cd BUILD  
+$ cmake ..  
+$ make  
+$ sudo make install  
 
 The directory under which the files are installed defaults to <tt>/usr/local/webos</tt>.  
 You can install them elsewhere by supplying a value for <tt>WEBOS_INSTALL_ROOT</tt>
 when invoking <tt>cmake</tt>. For example:
 
-$ cmake -D WEBOS_INSTALL_ROOT:PATH=$HOME/projects/openwebos ..
-$ make
-$ make install
+$ cmake -D WEBOS_INSTALL_ROOT:PATH=$HOME/projects/openwebos ..  
+$ make  
+$ make install  
 
 will install the files in subdirectories of <tt>$HOME/projects/openwebos</tt>.
 
