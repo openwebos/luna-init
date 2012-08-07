@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LICENSE@@@
+
+     Copyright (c) 2012 Hewlett-Packard Development Company, L.P.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+@@@LICENSE --><!--
+Fallback Fonts
+
+This file specifies the fonts, and the priority order, that will be searched for any
+glyphs not handled by the default fonts specified in /system/etc/system_fonts.xml.
+Each entry consists of a family tag and a list of files (file names) which support that
+family. The fonts for each family are listed in the order of the styles that they
+handle (the order is: regular, bold, italic, and bold-italic). The order in which the
+families are listed in this file represents the order in which these fallback fonts
+will be searched for glyphs that are not supported by the default system fonts (which are
+        found in /system/etc/system_fonts.xml).
+
+Note that there is not nameset for fallback fonts, unlike the fonts specified in
+system_fonts.xml. The ability to support specific names in fallback fonts may be supported
+in the future. For now, the lack of files entries here is an indicator to the system that
+these are fallback fonts, instead of default named system fonts.
+
+There is another optional file in /vendor/etc/fallback_fonts.xml. That file can be used to
+provide references to other font families that should be used in addition to the default
+fallback fonts. That file can also specify the order in which the fallback fonts should be
+searched, to ensure that a vendor-provided font will be used before another fallback font
+which happens to handle the same glyph.
+-->
+<familyset>
+    <family>
+        <fileset>
+            <file>HeiS_nb.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>HeiT_nb.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>Heisei_Kaku_Gothic_nb.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>Dotum_nb.ttf</file>
+        </fileset>
+    </family>
+</familyset>
