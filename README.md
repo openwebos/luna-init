@@ -1,6 +1,6 @@
 Summary
 =========
-luna-init: Timezone related, initialization and font setup files used by luna-sysmgr
+luna-init: Initialization and font setup files used by luna-sysmgr
 
 How to Build on Linux
 =====================
@@ -27,7 +27,7 @@ $ cmake ..
 $ make
 $ sudo make install
 
-The directory under which the files are installed defaults to <tt>/usr/local/webos<tt>.
+The directory under which the files are installed defaults to <tt>/usr/local/webos</tt>.  
 You can install them elsewhere by supplying a value for <tt>WEBOS_INSTALL_ROOT</tt>
 when invoking <tt>cmake</tt>. For example:
 
