@@ -21,12 +21,12 @@ cmake_minimum_required(VERSION 2.8.7)
 project(luna-init NONE)
 
 include(webOS/webOS)
-webos_modules_init(1 0 0 QUALIFIER RC2)
+webos_modules_init(1 0 0 QUALIFIER RC3)
 webos_component(2 0 0)
 webos_config_build_doxygen(doc Doxyfile)
 
 # install json files in /usr/palm
-MESSAGE (STATUS, "Installing json files in ${WEBOS_INSTALL_WEBOS_PREFIX}")
+MESSAGE (STATUS, "Install json files in ${WEBOS_INSTALL_WEBOS_PREFIX}")
 install(DIRECTORY files/conf/ DESTINATION ${WEBOS_INSTALL_WEBOS_PREFIX} 
         PATTERN "svn"         EXCLUDE 
         PATTERN ".svn"        EXCLUDE
@@ -36,15 +36,22 @@ install(DIRECTORY files/conf/ DESTINATION ${WEBOS_INSTALL_WEBOS_PREFIX}
 )
 
 # install region json file in /etc/palm
-MESSAGE (STATUS, "Installing region.json in ${WEBOS_INSTALL_WEBOS_SYSCONFDIR}")
+MESSAGE (STATUS, "Install region.json in ${WEBOS_INSTALL_WEBOS_SYSCONFDIR}")
 install(FILES files/conf/region.json DESTINATION ${WEBOS_INSTALL_WEBOS_SYSCONFDIR} 
 	PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE)
 
 # install font files /usr/share/fonts
-MESSAGE (STATUS, "Installing fonts in ${WEBOS_INSTALL_DATADIR}")
+MESSAGE (STATUS, "Install fonts in ${WEBOS_INSTALL_DATADIR}")
 install(DIRECTORY files/conf/fonts DESTINATION ${WEBOS_INSTALL_DATADIR} 
         PATTERN "svn"  EXCLUDE 
         PATTERN ".svn" EXCLUDE
 	PATTERN ".xml" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
-	PATTERN ".ttf" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+	PATTERN ".tgz" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 )
+
+# unzip the installed font files
+install(CODE "message(\"-- Unzipping font files to ${WEBOS_INSTALL_DATADIR}:\")")
+install(CODE "execute_process(COMMAND tar xvzf ${WEBOS_INSTALL_DATADIR}/fonts/fonts.tgz --directory=${WEBOS_INSTALL_DATADIR}/fonts/)")
+
+install(CODE "message(\"-- Cleanup tgz file in ${WEBOS_INSTALL_DATADIR}\")")
+install(CODE "execute_process(COMMAND rm -f ${WEBOS_INSTALL_DATADIR}/fonts/fonts.tgz)")
