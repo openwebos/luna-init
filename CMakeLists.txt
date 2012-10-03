@@ -46,12 +46,7 @@ install(DIRECTORY files/conf/fonts DESTINATION ${WEBOS_INSTALL_DATADIR}
         PATTERN "svn"  EXCLUDE 
         PATTERN ".svn" EXCLUDE
 	PATTERN ".xml" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
-	PATTERN ".tgz" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+    PATTERN ".ttf" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+    PATTERN ".txt" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 )
 
-# unzip the installed font files
-install(CODE "message(\"-- Unzipping font files to ${WEBOS_INSTALL_DATADIR}:\")")
-install(CODE "execute_process(COMMAND tar xvzf ${WEBOS_INSTALL_DATADIR}/fonts/fonts.tgz --directory=${WEBOS_INSTALL_DATADIR}/fonts/)")
-
-install(CODE "message(\"-- Cleanup tgz file in ${WEBOS_INSTALL_DATADIR}\")")
-install(CODE "execute_process(COMMAND rm -f ${WEBOS_INSTALL_DATADIR}/fonts/fonts.tgz)")
