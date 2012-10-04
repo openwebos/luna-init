@@ -22,7 +22,7 @@ project(luna-init NONE)
 
 include(webOS/webOS)
 webos_modules_init(1 0 0 QUALIFIER RC3)
-webos_component(2 0 0)
+webos_component(2 0 1)
 webos_config_build_doxygen(doc Doxyfile)
 
 # install json files in /usr/palm
