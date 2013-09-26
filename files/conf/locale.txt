@@ -45,6 +45,118 @@
                                            ]
                  },
                  {
+                         "languageName":"Hindi",
+                         "languageCode":"hi",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Tamil",
+                         "languageCode":"ta",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Telugu",
+                         "languageCode":"te",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Malayalam",
+                         "languageCode":"ml",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Kannada",
+                         "languageCode":"kn",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Bengali",
+                         "languageCode":"bn",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Gujarati",
+                         "languageCode":"gu",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Punjabi",
+                         "languageCode":"pa",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Assamese",
+                         "languageCode":"as",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Marathi",
+                         "languageCode":"mr",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Urdu",
+                         "languageCode":"ur",
+                         "countries":[
+                                                 {"countryName":"India", "countryCode":"in"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Ukrainian",
+                         "languageCode":"uk",
+                         "countries":[
+                                                 {"countryName":"Ukraine", "countryCode":"ua"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Russian",
+                         "languageCode":"ru",
+                         "countries":[
+                                                 {"countryName":"Russian Federation", "countryCode":"ru"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Japanese",
+                         "languageCode":"ja",
+                         "countries":[
+                                                 {"countryName":"Japan", "countryCode":"jp"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Korean",
+                         "languageCode":"ko",
+                         "countries":[
+                                                 {"countryName":"Korea, Republic of", "countryCode":"kr"}
+                                           ]
+                 },
+                 {
+                         "languageName":"Arabic",
+                         "languageCode":"ar",
+                         "countries":[
+                                                 {"countryName":"Saudi Arabia", "countryCode":"sa"}
+                                           ]
+                 },
+                 {
                          "languageName":"中文",
                          "languageCode":"zh",
                          "countries":[
