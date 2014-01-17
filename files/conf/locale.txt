@@ -142,6 +142,7 @@
                                                  {"countryName":"Tanzania",      "countryCode":"tz"},
                                                  {"countryName":"Uganda",        "countryCode":"ug"},
                                                  {"countryName":"Malaysia",      "countryCode":"my"},
+                                                 {"countryName":"Mauritius",     "countryCode":"mu"},
                                                  {"countryName":"Zambia",        "countryCode":"zm"}
                                            ]
                  },
@@ -221,6 +222,7 @@
                                                  {"countryName":"Republic of the Congo",    "countryCode":"cg"},
                                                  {"countryName":"Rwanda",                   "countryCode":"rw"},
                                                  {"countryName":"Senegal",                  "countryCode":"sn"},
+                                                 {"countryName":"Mauritius",                "countryCode":"mu"},
                                                  {"countryName":"Togo",                     "countryCode":"tg"}
                                            ]
                  },
@@ -522,6 +524,6 @@
                                                  {"countryName":"Singapore",     "countryCode":"sg"},
                                                  {"countryName":"Taiwan",        "countryCode":"tw"}
                                      ]
-                 },
+                 }
              ]
 }

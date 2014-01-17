@@ -227,6 +227,7 @@
 { "Country": "Armenia", 		"CountryCode": "AM", "ZoneID": "Asia\/Yerevan", 	"City": "Yerevan",  	"Description": "Armenia Time", 			"offsetFromUTC": 240, "supportsDST": 0 },
 { "Country": "Azerbaijan", 		"CountryCode": "AZ", "ZoneID": "Asia\/Baku", 		"City": "Baku",  	"Description": "Azerbaijan Time", 		"offsetFromUTC": 240, "supportsDST": 1 }, 
 { "Country": "Georgia", 		"CountryCode": "GE", "ZoneID": "Asia\/Tbilisi", 	"City": "Tbilisi",  	"Description": "Georgia Time", 			"offsetFromUTC": 240, "supportsDST": 0 }, 
+{ "Country": "Mauritius", 		"CountryCode": "MU", "ZoneID": "Indian\/Mauritius",	"City": "Port Louis",  	"Description": "Mauritius Time",		"offsetFromUTC": 240, "supportsDST": 0 },
 { "Country": "Oman", 			"CountryCode": "OM", "ZoneID": "Asia\/Muscat", 		"City": "Muscat",  	"Description": "Gulf Time", 			"offsetFromUTC": 240, "supportsDST": 0 },
 { "Country": "Russia", 			"CountryCode": "RU", "ZoneID": "Europe\/Samara", 	"City": "Samara",  	"Description": "Samara Time", 			"offsetFromUTC": 240, "supportsDST": 0 , "preferred":true },
 { "Country": "United Arab Emirates", 	"CountryCode": "AE", "ZoneID": "Asia\/Dubai",		"City": "Dubai",  	"Description": "Gulf Time", 			"offsetFromUTC": 240, "supportsDST": 0 }, 
