@@ -25,6 +25,24 @@ webos_modules_init(1 0 0 QUALIFIER RC3)
 webos_component(2 0 1)
 webos_config_build_doxygen(doc Doxyfile)
 
+# ext-timezones.json
+add_custom_command(
+	OUTPUT ext-timezones.json
+	COMMAND echo "Generating ext-timezones.json"
+	COMMAND python2
+		${CMAKE_SOURCE_DIR}/src/gen-ext-timezones.py
+		-s ${CMAKE_SOURCE_DIR}/src
+		-o ext-timezones.json
+	DEPENDS src/gen-ext-timezones.py
+	        src/mccInfo.json
+	        src/uiTzInfo.json
+	        src/abbrevs.py
+)
+
+set(ext_timezones_json ${CMAKE_CURRENT_BINARY_DIR}/ext-timezones.json)
+
+add_custom_target(generate ALL DEPENDS ext-timezones.json)
+
 # install json files in /usr/palm
 MESSAGE (STATUS, "Install json files in ${WEBOS_INSTALL_WEBOS_PREFIX}")
 install(DIRECTORY files/conf/ DESTINATION ${WEBOS_INSTALL_WEBOS_PREFIX} 
@@ -34,6 +52,8 @@ install(DIRECTORY files/conf/ DESTINATION ${WEBOS_INSTALL_WEBOS_PREFIX}
 	PATTERN "region.json" EXCLUDE
 	PATTERN ".json"       PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 )
+install(FILES ${ext_timezones_json} DESTINATION ${WEBOS_INSTALL_WEBOS_PREFIX}
+	PERMISSIONS OWNER_READ OWNER_WRITE)
 
 # install region json file in /etc/palm
 MESSAGE (STATUS, "Install region.json in ${WEBOS_INSTALL_WEBOS_SYSCONFDIR}")
