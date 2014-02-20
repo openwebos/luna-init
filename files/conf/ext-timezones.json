@@ -10,7 +10,7 @@
 { "Country": "United States of America","CountryCode": "US", "ZoneID": "America\/Anchorage", 	"City": "Anchorage",	"Description": "Alaska Time",			"offsetFromUTC": -540, "supportsDST": 1 , "preferred":true },
 { "Country": "French Polynesia", 	"CountryCode": "PF", "ZoneID": "Pacific\/Gambier", 	"City": "Gambier",  	"Description": "Gambier Time", 			"offsetFromUTC": -540, "supportsDST": 0 },
 
-{ "Country": "United States of America","CountryCode": "US", "ZoneID": "America\/Los_Angeles",	"City": "Los Angeles",  "Description": "Pacific Time", 			"offsetFromUTC": -480, "supportsDST": 1 , "preferred":true , "default":true },
+{ "Country": "United States of America","CountryCode": "US", "ZoneID": "America\/Los_Angeles",	"City": "Los Angeles",  "Description": "Pacific Time", 			"offsetFromUTC": -480, "supportsDST": 1 , "preferred":true },
 { "Country": "Canada", 			"CountryCode": "CA", "ZoneID": "America\/Dawson", 	"City": "Dawson",  	"Description": "Pacific Time", 			"offsetFromUTC": -480, "supportsDST": 1 },
 { "Country": "Canada", 			"CountryCode": "CA", "ZoneID": "America\/Vancouver", 	"City": "Vancouver",  	"Description": "Pacific Time", 			"offsetFromUTC": -480, "supportsDST": 1 },
 { "Country": "Mexico", 			"CountryCode": "MX", "ZoneID": "America\/Tijuana", 	"City": "Tijuana",  	"Description": "Pacific Time", 			"offsetFromUTC": -480, "supportsDST": 1 },
@@ -108,7 +108,7 @@
 { "Country": "Greenland", 		"CountryCode": "GL", "ZoneID": "America\/Scoresbysund", "City": "Scoresbysund",	"Description": "Eastern Greenland Time", 	"offsetFromUTC": -60,  "supportsDST": 1 }, 
 { "Country": "Portugal", 		"CountryCode": "PT", "ZoneID": "Atlantic\/Azores", 	"City": "Azores",  	"Description": "Azores Time", 			"offsetFromUTC": -60,  "supportsDST": 1 , "preferred":true },
 
-{ "Country": "United Kingdom", 		"CountryCode": "GB", "ZoneID": "Europe\/London", 	"City": "London",  	"Description": "Greenwich Mean Time", 		"offsetFromUTC": 0, "supportsDST": 1 , "preferred":true },
+{ "Country": "United Kingdom", 		"CountryCode": "GB", "ZoneID": "Europe\/London", 	"City": "London",  	"Description": "Greenwich Mean Time", 		"offsetFromUTC": 0, "supportsDST": 1 , "preferred":true , "default": true},
 { "Country": "Liberia", 		"CountryCode": "LR", "ZoneID": "Africa\/Monrovia", 	"City": "Monrovia",  	"Description": "Greenwich Mean Time", 		"offsetFromUTC": 0, "supportsDST": 0 },
 { "Country": "Burkina Faso", 		"CountryCode": "BF", "ZoneID": "Africa\/Ouagadougou", 	"City": "Ouagadougou",  "Description": "Greenwich Mean Time", 		"offsetFromUTC": 0, "supportsDST": 0 }, 
 { "Country": "Côte d'Ivoire", 		"CountryCode": "CI", "ZoneID": "Africa\/Abidjan", 	"City": "Abidjan",  	"Description": "Greenwich Mean Time", 		"offsetFromUTC": 0, "supportsDST": 0 }, 
