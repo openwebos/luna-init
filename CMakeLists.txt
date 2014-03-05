@@ -1,6 +1,6 @@
 # @@@LICENSE
 #
-# Copyright (c) 2012-2013 LG Electronics, Inc.
+# Copyright (c) 2012-2014 LG Electronics, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ install(FILES files/conf/region.json DESTINATION ${WEBOS_INSTALL_WEBOS_SYSCONFDI
 # install font files /usr/share/fonts
 MESSAGE (STATUS, "Install fonts in ${WEBOS_INSTALL_DATADIR}")
 install(DIRECTORY files/conf/fonts DESTINATION ${WEBOS_INSTALL_DATADIR} 
+        PATTERN "fonts.tgz" EXCLUDE
         PATTERN "svn"  EXCLUDE 
         PATTERN ".svn" EXCLUDE
 	PATTERN ".xml" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
