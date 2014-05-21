@@ -79,9 +79,11 @@ def genTimeZones():
 			yield entry
 
 def genSysZones():
-	for offset in range(-14,13):
-		if offset > 0: ids = [('Etc/GMT+%d' % offset, 'GMT-%d' % offset)]
-		elif offset < 0: ids = [('Etc/GMT-%d' % -offset, 'GMT+%d' % -offset)]
+	for offset in takewhile(lambda x: x < 12.5, count(-14, 0.5)):
+		offset_str = str(abs(int(offset)))
+		if offset != int(offset): offset_str = offset_str + ":30"
+		if offset > 0: ids = [('Etc/GMT+%s' % offset_str, 'GMT-%s' % offset_str)]
+		elif offset < 0: ids = [('Etc/GMT-%s' % offset_str, 'GMT+%s' % offset_str)]
 		else: ids = [('Etc/' + x, 'GMT') for x in ['GMT-0', 'GMT+0']]
 		for (zoneId, id) in ids:
 			yield {
@@ -89,11 +91,10 @@ def genSysZones():
 				'CountryCode': '',
 				'ZoneID': zoneId,
 				'supportsDST': 0,
-				'offsetFromUTC': -offset*60,
+				'offsetFromUTC': int(-offset*60),
 				'Description': id,
 				'City': ''
 			}
-
 
 ### Parse options
 
