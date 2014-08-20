@@ -33,7 +33,7 @@ def findDST(tz, months = [datetime(datetime.utcnow().year, n+1, 1) for n in rang
 	summer = next(chain(dropwhile(lambda m: tz.dst(m).seconds == 0, months), [None]))
 	return (std, summer)
 
-def genTimeZones():
+def genTimeZones(do_guess = True):
 	for (cc, zoneIds) in pytz.country_timezones.items():
 		for zoneId in zoneIds:
 			tz = pytz.timezone(zoneId)
@@ -52,6 +52,10 @@ def genTimeZones():
 
 			info = uiInfo.get(zoneId, None)
 			if info is None:
+				if not do_guess:
+					# so we shouldn't try to guess?
+					# lets skip unknown time-zones
+					continue
 				# guess City
 				(zregion, zpoint) = zoneId.split('/',1)
 				if zpoint != country: city = zpoint.replace('_',' ')
@@ -61,7 +65,7 @@ def genTimeZones():
 				description = abbrevs.get(tzname, tzname)
 				preferred = False
 			else:
-				#country = info['Country']
+				country = info.get('Country', country) # allow override
 				city = info['City']
 				description = info['Description']
 				preferred = info.get('preferred', False)
@@ -118,12 +122,17 @@ def set_zoneinfo_dir(zoneinfo_dir):
 	pytz.resource_exists = lambda name: os.path.exists(resource_path(name))
 
 
-opts, args = getopt(sys.argv[1:], 'z:o:s:', longopts=['zoneinfo-dir=', 'output=', 'source-dir='])
+opts, args = getopt(sys.argv[1:], 'z:o:s:w', longopts=[
+	'zoneinfo-dir=', 'output=', 'source-dir=', 'no-guess', 'white-list-only'
+	])
+
+do_guess = True
 
 for (opt, val) in opts:
 	if opt in ('--zoneinfo-dir', '-z'): set_zoneinfo_dir(val)
 	elif opt in ('--output', '-o'): output = val
 	elif opt in ('--source-dir', '-s'): source_dir = val
+	elif opt in ('--no-guess', '--white-list-only', '-w'): do_guess = False
 
 # openembedded sets some env variables. lets guess from one of it where is our sysroot.
 guess_sysroot = os.environ.get('PKG_CONFIG_SYSROOT_DIR')
@@ -137,7 +146,7 @@ uiInfo = json.load(open(os.path.join(source_dir, 'uiTzInfo.json'), 'rb'))
 
 ### load natural timezones from pytz
 
-timeZones = list(genTimeZones())
+timeZones = list(genTimeZones(do_guess = do_guess))
 timeZones.sort(lambda x, y: cmp(x['offsetFromUTC'], y['offsetFromUTC']))
 
 # gen Etc/* time-zones
